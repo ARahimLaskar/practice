@@ -4,9 +4,10 @@ const { connection } = require("./config/db.js");
 const { noteController } = require("./routes/noteRoutes.js");
 const { authentication } = require("./Middleware/authentication.js");
 
+var cors = require("cors");
 const app = express();
 const PORT = 8000;
-
+app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
